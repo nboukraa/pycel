@@ -135,8 +135,8 @@ def normalize_year(y, m, d):
         m -= y_plus * 12
 
     if d <= 0:
-        d += max_days_in_month(m, y)
         m -= 1
+        d += max_days_in_month(max(1, m), y)
         y, m, d = normalize_year(y, m, d)
 
     else:
